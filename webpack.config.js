@@ -1,13 +1,13 @@
 const path = require('path');
 const webpack=require('webpack');
-
-
+const CompressionPlugin = require("compression-webpack-plugin")
 module.exports = {
     context: path.join(__dirname, 'app'),
     entry: './app.js',
+    devtool:"source-map",
     output: {
     path: path.join(__dirname, 'build'),
-    filename: 'index.js',
+    filename: 'index..min.js',
     publicPath: '/',
   },
   devServer: {
@@ -35,5 +35,12 @@ module.exports = {
         }            
       ]
   },
-  plugins: []
+  plugins: [
+    
+      new CompressionPlugin({
+        test: /\.js/
+      })
+        
+  ],
+ 
 }

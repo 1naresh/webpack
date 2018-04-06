@@ -40,5 +40,4 @@ function productsCtrl($scope,$state,dataService,$document,$stateParams){
     } 
 }
 productsCtrl.$inject=['$scope','$state','dataService','$document','$stateParams']
-
 export default productsCtrl;
