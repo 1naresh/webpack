@@ -20,6 +20,7 @@ function dataService($q,$http){
             url:'/data/getByPhone/'+user.phone
         }).then(function(positiveRes){
             defered.resolve(positiveRes)
+            console.log(positiveRes.data)
         },function(negativeRes){
             defered.reject(negativeRes)
         })
