@@ -1,6 +1,14 @@
 
-function bedCtrl($scope,$window,dataService,$state){
-    var user=dataService.user
+function bedCtrl($scope,$window,dataService,$state,$localStorage){
+    $scope.iSkitchen=false;
+    $scope.isBed=true; 
+    var user=$localStorage.user;
+    $scope.products=user.products;
+    $scope.kitchenShape=user.kitchenShape
+    $scope.kitchenAamount=user.kitchenAamount; 
+    $scope.kitchenCost1=user.kitchenCost1
+    $scope.kitchenCost2=user.kitchenCost2;
+    $scope.bedroomType=user.bedroomType;
     $scope.Math = $window.Math;
     $scope.heading='My wardrobe length(s) are'
     var amount=0
@@ -39,11 +47,11 @@ function bedCtrl($scope,$window,dataService,$state){
                 $scope.warning=true;
             }
         }
-        user.amount += amount;
-        user.bedRoomSize=size
-        user.bedwallA=wallA
-        user.bedwallB=wallB
-        user.bedwallC=wallC
+        $localStorage.user.bedRoomAmount=amount;
+        $localStorage.user.bedRoomSize=size;
+        $localStorage.user.bedwallA=wallA;
+        $localStorage.user.bedwallB=wallB;
+        $localStorage.user.bedwallC=wallC;
     }
     $scope.toRegister=function(){
         calculate()
@@ -57,5 +65,5 @@ function bedCtrl($scope,$window,dataService,$state){
         }        
     }
 }
-bedCtrl.$inject=['$scope','$window','dataService','$state'];
+bedCtrl.$inject=['$scope','$window','dataService','$state','$localStorage'];
 export default bedCtrl;

@@ -1,13 +1,17 @@
 
-function finalCtrl($scope,$state,dataService){
-    dataService.getData().then(function(res){
-        $scope.result=res.data
-    })
+function finalCtrl($scope,$state,dataService,$localStorage){
+    var user=$localStorage.user
+    console.log(user)
+    $scope.result=user;
+    dataService.updateUser(user)
+    // dataService.getData(phone).then(function(res){
+    //     console.log(res.data)
+    //     $scope.result=res.data
+    // })
     // $scope.result=dataService.getData();
     $scope.toHome=function(){
-        dataService.user={}
         $state.go('home')
     }
 }
-finalCtrl.$inject=['$scope','$state','dataService'];
+finalCtrl.$inject=['$scope','$state','dataService','$localStorage'];
 export default finalCtrl;

@@ -8,6 +8,7 @@ import straightShapeTpl from './templates/straightShape.html';
 import wordrobesTpl from './templates/wordrobes.html'; 
 import fulllInteriorsTpl from './templates/fulllInteriors.html'; 
 import registerTpl from './templates/register.html'; 
+import phoneVerifyTpl from './templates/phoneVerify.html'; 
 import finalTpl from './templates/final.html'; 
 import sheetsTpl from './templates/sheets.html'; 
 
@@ -18,106 +19,182 @@ import kitchenCtrl from './controllers/kitchen';
 import wordrobesCtrl from './controllers/wordrobes';
 import bedCtrl from './controllers/bed';
 import registerCtrl from './controllers/register';
+import phoneVerifyCtrl from './controllers/phoneVerify';
 import finalCtrl from './controllers/final';
 import fulllInteriorsCtrl from './controllers/fulllInteriors';
 import kitchenSheetsCtrl from './controllers/kitchenSheets';
 import bedroomSheetsCtrl from './controllers/bedroomSheets';
 function config($stateProvider,$urlRouterProvider){
-    $stateProvider.state({
+    $stateProvider
+    .state({
         name:"home",
         url:"/home",
-        template: homeTpl,
-        controller: homeCtrl
+        views:{
+            "main":{
+                template:homeTpl,
+                controller:homeCtrl
+            }
+        }
     })
     .state({
-        name:'products',
+        name:"products",
         url:"/products",
-        template:productsTpl,
-        controller:productsCtrl
+        views:{
+            "main":{
+                template:productsTpl,
+                controller:productsCtrl
+            }
+        }
     })
     .state({
-        name:'shapes',
+        name:"shapes",
         url:"/shapes",
-        template:shapesTpl,
-        controller: shapesCtrl
+        views:{
+            "main":{
+                template:shapesTpl,
+                controller:shapesCtrl
+            }
+        }
     })
     .state({
-        name:'LShape',
+        name:"LShape",
         url:"/LShape",
-        template:LShapeTpl,
-        controller: kitchenCtrl
+        views:{
+            "main":{
+                template:LShapeTpl,
+                controller:kitchenCtrl
+            }
+        }
     })
     .state({
-        name:'UShape',
+        name:"UShape",
         url:"/UShape",
-        template:UShapeTpl,
-        controller: kitchenCtrl
+        views:{
+            "main":{
+                template:UShapeTpl,
+                controller:kitchenCtrl
+            }
+        }
     })
     .state({
-        name:'parallelShape',
+        name:"parallelShape",
         url:"/parallelShape",
-        template:parallelShapeTpl,
-        controller: kitchenCtrl
+        views:{
+            "main":{
+                template:parallelShapeTpl,
+                controller:kitchenCtrl
+            }
+        }
     })
     .state({
-        name:'straightShape',
+        name:"straightShape",
         url:"/straightShape",
-        template:straightShapeTpl,
-        controller: kitchenCtrl
+        views:{
+            "main":{
+                template:straightShapeTpl,
+                controller:kitchenCtrl
+            }
+        }
     })
     .state({
-        name:'wordrobes',
+        name:"wordrobes",
         url:"/wordrobes",
-        template: wordrobesTpl,
-        controller: wordrobesCtrl
+        views:{
+            "main":{
+                template:wordrobesTpl,
+                controller:wordrobesCtrl
+            }
+        }
     })
     .state({
-        name:'singleBed',
+        name:"singleBed",
         url:"/singleBed",
-        template: straightShapeTpl,
-        controller: bedCtrl
+        views:{
+            "main":{
+                template:straightShapeTpl,
+                controller:bedCtrl
+            }
+        }
     })
     .state({
-        name:'doubleBed',
+        name:"doubleBed",
         url:"/doubleBed",
-        template: LShapeTpl,
-        controller: bedCtrl
+        views:{
+            "main":{
+                template:LShapeTpl,
+                controller:bedCtrl
+            }
+        }
     })
     .state({
-        name:'tripleBed',
+        name:"tripleBed",
         url:"/tripleBed",
-        template: UShapeTpl,
-        controller: bedCtrl
+        views:{
+            "main":{
+                template:UShapeTpl,
+                controller:bedCtrl
+            }
+        }
     })
     .state({
-        name:'register',
+        name:"register",
         url:"/register",
-        template: registerTpl,
-        controller: registerCtrl
+        views:{
+            "main":{
+                template:registerTpl,
+                controller:registerCtrl
+            }
+        }
     })
     .state({
-        name:'final',
+        name:"phoneVerify",
+        url:"/phoneVerify",
+        views:{
+            "main":{
+                template:phoneVerifyTpl,
+                controller:phoneVerifyCtrl
+            }
+        }
+    })
+    .state({
+        name:"final",
         url:"/final",
-        template: finalTpl,
-        controller: finalCtrl
+        views:{
+            "main":{
+                template:finalTpl,
+                controller:finalCtrl
+            }
+        }
     })
     .state({
-        name:'fulllInteriors',
-        url:"/fulllInteriors",
-        template: fulllInteriorsTpl,
-        controller: fulllInteriorsCtrl
+        name:"fullInteriors",
+        url:"/fullInteriors",
+        views:{
+            "main":{
+                template:fulllInteriorsTpl,
+                controller:fulllInteriorsCtrl
+            }
+        }
     })
     .state({
-        name:'kitchenSheets',
+        name:"kitchenSheets",
         url:"/kitchenSheets",
-        template: sheetsTpl,
-        controller: kitchenSheetsCtrl
+        views:{
+            "main":{
+                template:sheetsTpl,
+                controller:kitchenSheetsCtrl
+            }
+        }
     })
     .state({
-        name:'bedroomSheets',
+        name:"bedroomSheets",
         url:"/bedroomSheets",
-        template: sheetsTpl,
-        controller: bedroomSheetsCtrl
+        views:{
+            "main":{
+                template:sheetsTpl,
+                controller:bedroomSheetsCtrl
+            }
+        }
     })
     $urlRouterProvider.otherwise("/home")
 }

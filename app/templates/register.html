@@ -3,7 +3,7 @@
 <form ng-submit="submitForm()" name="userForm" class="form-group" novalidate>
     <label>name:
         <input type="text" class="form-control" ng-model="name">
-        <p ng-if="nameErr">name length should be 6 to 15 letters</p>
+        <p ng-if="nameErr">name should be 6 to 15 letters</p>
     </label><br>
     <label>email:
         <input type="text" class="form-control" ng-model="email">
@@ -11,7 +11,7 @@
     </label><br>
     <label>mobile number:
         <input type="text" class="form-control" ng-model="phone" >
-        <p ng-if="phoneErr">phone should be 8 to 15 digits</p>
+        <p ng-if="phoneErr">phone number should be 8 to 15 digits</p>
     </label><br>
     <label>select city:
         <select class="form-control" ng-model="city" >
@@ -20,8 +20,8 @@
         <p ng-if="cityErr">please select city</p>
     </label><br>
     <!--<p>{{userForm.$valid}}</p>-->
-    <button type="submit" class="btn">submit</button>
+    <button type="button" ng-click="back()" class="button">back</button>
+    <button type="submit" class="button">submit</button>
 </form> 
- <button type="button" ng-click="back()" class="btn">back</button>
- {{e}}
- {{p}}
+ 
+ 

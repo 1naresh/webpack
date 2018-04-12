@@ -1,9 +1,63 @@
 <div class="result">
     <button type="button" ng-click="toHome()" class="btn btn-success">home</button>
-    <p>name<span>:{{result.name}}</span></p><br>
-    <p>email<span>:{{result.email}}</span></p><br>
-    <p>phone<span>:{{result.phone}}</span></p><br>
-    <p>city<span>:{{result.city}}</span></p><br>
-    <div>products<span>:<span style="margin-left:0px" ng-repeat="x in result.products">{{x}},</span></span><div><br>
-    <h1>amount<span>{{result.amount}}</span></h1><br>
-</div>
+    <div>name<span>:{{result.name}}</span></div>
+    <div>email<span>:{{result.email}}</span></div>
+    <div>phone<span>:{{result.phone}}</span></div>
+    <div>city<span>:{{result.city}}</span></div>
+    <div>
+        products
+        <span>:
+            <span style="margin-left:0px" ng-repeat="x in result.products">
+                {{x}} 
+            </span>
+        </span>
+    <div>
+    <div>kitchenShape<span>:{{result.kitchenShape}}</span></div>
+    <div>kitchenSize<span>:{{result.kitchenSize}}</span></div>
+    <div ng-if="result.kitchenwallA">
+        kitchenwallA<span>:{{result.kitchenwallA}}</span>
+    </div>
+    <div ng-if="result.kitchenwallB">
+        kitchenwallB<span>:{{result.kitchenwallB}}</span>
+    </div>
+    <div ng-if="result.kitchenwallC">
+        kitchenwallC<span>:{{result.kitchenwallC}}</span>
+    </div>
+    <div>kitchenAamount<span>:{{result.kitchenAamount}}</span></div>
+    <div>kitchenCost1<span>:{{result.kitchenCost1}}</span></div>
+    <div>kitchenCost2<span>:{{result.kitchenCost2}}</span></div>
+    <div ng-if="result.bedroomType">
+        bedroomType<span>:{{result.bedroomType}}</span>
+    </div>
+    <div ng-if="result.bedRoomSize">
+        bedRoomSize<span>:{{result.bedRoomSize}}</span>
+    </div>
+    <div ng-if="result.bedwallA">
+        bedwallA<span>:{{result.bedwallA}}</span>
+    </div>
+    <div ng-if="result.bedwallB">
+        bedwallB<span>:{{result.bedwallB}}</span>
+    </div>
+    <div ng-if="result.bedwallC">
+        bedwallC<span>:{{result.bedwallC}}</span>
+    </div><br>
+    <div ng-if="result.bedRoomAmount">
+        bedRoomAmount<span>:{{result.bedRoomAmount}}</span>
+    </div>
+    <div ng-if="result.bedroomCost1">
+        bedroomCost1<span>:{{result.bedroomCost1}}</span>
+    </div>
+    <div ng-if="result.bedroomCost2">
+        bedroomCost2<span>:{{result.bedroomCost2}}</span>
+    </div>
+    <div ng-if="result.interiors">
+        interiors<span>:<span style="margin-left:0px" ng-repeat="x in result.interiors">{{x}} </span></span>
+    <div>
+    <h1>
+        total amount:  
+        <span>
+            {{result.bedRoomAmount+result.bedroomCost1+result.bedroomCost2+
+            result.kitchenAamount+result.kitchenCost1+result.kitchenCost2}}
+        </span>
+    </h1>
+</div> 

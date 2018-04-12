@@ -9,7 +9,6 @@
             </li>
         </ul>
     </div>
-    {{estCost1}}
     <div class="row">
         <ul>
             <li ng-repeat="cost in costs2">
@@ -19,8 +18,25 @@
             </li>
         </ul>
     </div>
-    {{estCost2}}
 </div>
-<button type="button" ng-click="toRegister()">next</button>
+<button type="button" ng-click="toRegister()" class="button">next</button>
 <p ng-if="warning">please select</p>
-<button type="button" ng-click="back()">back</button>
+<button type="button" ng-click="back()" class="button">back</button>
+<div>
+    <ul>
+        <li>
+            {{products[0]}} => {{kitchenShape}} => {{kitchenAamount}} =>
+            estCost1: {{kitchenCost1}} =>estCost2 :{{kitchenCost2}}
+        </li>
+        <li>
+            {{products[1]}} =>
+            <span ng-if="isBedSheets">
+                {{bedroomType}}=>{{bedRoomAmount}}=>
+                estCost1: {{bedroomCost1}} estCost2: {{bedroomCost2}}
+            </span>
+        </li>
+        <li>
+            {{products[2]}}
+        </li>
+    </ul>
+</div>

@@ -1,16 +1,23 @@
 
-function productsCtrl($scope,$state,dataService,$document,$stateParams){
-    var products=['kitchen']
+function productsCtrl($scope,$state,dataService,$document,$stateParams,$localStorage){
+    $scope.products=['kitchen']
     $scope.kitchenImg=true;    
+    $scope.isWordrobe=function(){
+        if($scope.wardrobe){          
+            $scope.products[1]='wordrobe'
+        }else{   
+            $scope.products[1]=null
+        }
+    }
+    $scope.isInterior=function(){ 
+        if($scope.fullInteriors){
+            $scope.products[2]='fullInteriors'
+        }else{
+            $scope.products[2]=null
+        }
+    }
     $scope.toShape=function(){
-        if($scope.wardrobe){
-            products.push('wardrobe')
-        }
-        if($scope.fulllInteriors){
-            products.push('fulllInteriors')
-        }
-        // dataService.addProducts(products)
-        dataService.user.products=products
+        $localStorage.user.products=$scope.products; 
         $state.go('shapes')
     }
     $scope.back=function(){
@@ -22,9 +29,9 @@ function productsCtrl($scope,$state,dataService,$document,$stateParams){
             $scope.kitchenImg=false;
             $scope.wardrobeImg=true
         }
-        if(product=='fulllInteriors'){
+        if(product=='fullInteriors'){
             $scope.kitchenImg=false;
-            $scope.fulllInteriorsImg=true 
+            $scope.InteriorImage=true 
         }
     }
     $scope.leave=function(product){        
@@ -33,11 +40,11 @@ function productsCtrl($scope,$state,dataService,$document,$stateParams){
             $scope.wardrobeImg=false
             $scope.kitchenImg=true;
         }
-        if(product=='fulllInteriors'){
-            $scope.fulllInteriorsImg=false;
+        if(product=='fullInteriors'){
+            $scope.InteriorImage=false;
             $scope.kitchenImg=true;
         }
     } 
 }
-productsCtrl.$inject=['$scope','$state','dataService','$document','$stateParams']
+productsCtrl.$inject=['$scope','$state','dataService','$document','$stateParams','$localStorage']
 export default productsCtrl;

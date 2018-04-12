@@ -1,5 +1,6 @@
 
-function registerCtrl($scope,$state,dataService){
+function registerCtrl($scope,$state,dataService,$localStorage){
+    var user = $localStorage.user
     $scope.nameErr=false;
     $scope.emailErr=false;
     $scope.phoneErr=false;
@@ -9,7 +10,7 @@ function registerCtrl($scope,$state,dataService){
         var name=$scope.name
         var email=$scope.email
         var phone=$scope.phone
-        var city=$scope.city
+        var city=$scope.city         
         // if(name == undefined || name.length < 6 || name.length >15){
         //     $scope.nameErr=true;
         // }else{
@@ -32,9 +33,16 @@ function registerCtrl($scope,$state,dataService){
         // }else{
         //     $scope.cityErr=false;
         // }
-        // if( !$scope.nameErr && !$scope.emailErr && !$scope.phoneErr || !$scope.cityErr){
-        //     dataService.addDetails({name:name,email:email,phone:phone,city:city})
-        //     $state.go('final')
+       
+        // if( !$scope.nameErr && !$scope.emailErr && !$scope.phoneErr && !$scope.cityErr){
+            user.name=name;
+            user.phone=phone;
+            user.email=email;
+            user.city=city;
+            dataService.addDetails(user).then(function(res){
+                user.id=res.data._id
+            })
+            $state.go('products')
         // }
         
         // dataService.getAll().then(function(res){
@@ -42,24 +50,23 @@ function registerCtrl($scope,$state,dataService){
         //     var emails=[]
         //     res.data.map( function(User){
         //         phones.push(User.phone)
-        //         emails.push(User.email)
+        //         emails.push(User.email) 
         //         $scope.e=phones
         //         $scope.p=emails
         //     })
         // })
-        dataService.addDetails({name:name,email:email,phone:phone,city:city})
-        $state.go('final')
+        // dataService.addDetails({name:name,email:email,phone:phone,city:city})
+        // $state.go('final')
     } 
     $scope.back=function(){
-        console.log(dataService.user.products.indexOf('fulllInteriors'))
-        if(dataService.user.products.indexOf('fulllInteriors') == 2){
+        if((user.products.indexOf('fulllInteriors') == 2) || (user.products.indexOf('fulllInteriors') == 1)){
             $state.go('fulllInteriors')
-        }else if(dataService.user.products.indexOf('wardrobe') == 1 ){
+        }else if(user.products.indexOf('wardrobe') == 1 ){
             $state.go('wardrobe')
         }else{
             $state.go('shapes')
         }        
     }
 }
-registerCtrl.$inject=['$scope','$state','dataService'] ;
+registerCtrl.$inject=['$scope','$state','dataService','$localStorage'] ;
 export default registerCtrl;

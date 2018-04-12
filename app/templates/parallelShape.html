@@ -4,4 +4,29 @@
 <P ng-if="Math.floor(wallA/12)+Math.floor(wallB/12)<=5">{{(Math.floor(wallA/12)+Math.floor(wallB/12))*100}}</P>
 <P ng-if="Math.floor(wallA/12)+Math.floor(wallB/12)>5">{{500+((Math.floor(wallA/12)+Math.floor(wallB/12)-5)*200)}}</P>
 <p ng-if="warning">each must be greater than 1 or equal feet</p>
+<img width="200px" src="https://super.homelane.com/p-shaped-yellow-2.png"/>
+
 <button type="button" ng-click="toRegister()" class="btn">next</button>
+<div>
+    <h1>Details</h1> 
+    <h2>products</h2>
+    <ul>
+        <li>
+            {{products[0]}} => {{kitchenShape}} =>
+            <span ng-if="isKitchen">
+                    <span ng-if="Math.floor(wallA/12)+Math.floor(wallB/12)<=5">{{(Math.floor(wallA/12)+Math.floor(wallB/12))*100}}</span>
+                    <span ng-if="Math.floor(wallA/12)+Math.floor(wallB/12)>5">{{500+((Math.floor(wallA/12)+Math.floor(wallB/12)-5)*200)}}</span>
+            </span>
+            <span ng-if="isBed">
+                {{kitchenAamount}}
+            </span>
+        </li>
+        <li>{{products[1]}} </li>
+        <li>
+            full interiors  
+            <span ng-if="products[2]">selected</span>
+            <span ng-if="!products[2]">not selected</span>
+        </li>
+    </ul>
+</div>
+

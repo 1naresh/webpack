@@ -1,10 +1,13 @@
 
-function shapesCtrl($scope,$state,dataService){
-    var user=dataService.user
+function shapesCtrl($scope,$state,dataService,$localStorage){
+    $scope.products=$localStorage.user.products
     $scope.isLShape=true
-    $scope.continue=function(toState){
-        user.kitchenShape=toState
-        $state.go(toState) 
+    $scope.selectShape=function(state){
+        $scope.kitchenShape=state
+    }
+    $scope.continue=function(){
+        $localStorage.user.kitchenShape=$scope.kitchenShape
+        $state.go($scope.kitchenShape) 
     }
     $scope.back=function(){
         $state.go('products')
@@ -16,7 +19,7 @@ function shapesCtrl($scope,$state,dataService){
         }else if(shape == 'parallelShape'){
             $scope.isLShape=false
             $scope.isparallelShape=true
-        }
+        } 
         else if(shape == 'straightShape'){
             $scope.isLShape=false;
             $scope.isstraightShape=true
@@ -36,5 +39,5 @@ function shapesCtrl($scope,$state,dataService){
         }
     }
 } 
-shapesCtrl.$inject=['$scope','$state','dataService'];
+shapesCtrl.$inject=['$scope','$state','dataService','$localStorage'];
 export default shapesCtrl;

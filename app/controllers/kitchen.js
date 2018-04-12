@@ -1,7 +1,10 @@
 
-function kitchenCtrl($scope,$state,dataService,$window){
-    var user=dataService.user
-    $scope.heading='What is the size of your kitchen?'
+function kitchenCtrl($scope,$state,dataService,$window,$localStorage){
+    $scope.isKitchen=true;
+    $scope.isBed=false;
+    $scope.heading='What is the size of your kitchen?';
+    $scope.products=$localStorage.user.products;
+    $scope.kitchenShape=$localStorage.user.kitchenShape
     $scope.Math = $window.Math;
     var amount=0;
     var size=0;
@@ -39,11 +42,11 @@ function kitchenCtrl($scope,$state,dataService,$window){
                 $scope.warning=true;
             }
         }
-        user.amount=amount
-        user.kitchenSize=size
-        user.kitchenwallA=wallA;
-        user.kitchenwallB=wallB;
-        user.kitchenwallC=wallC;
+        $localStorage.user.kitchenAamount=amount
+        $localStorage.user.kitchenSize=size
+        $localStorage.user.kitchenwallA=wallA
+        $localStorage.user.kitchenwallB=wallB
+        $localStorage.user.kitchenwallC=wallC
     }
     $scope.toRegister=function(){
         calculate()
@@ -55,11 +58,10 @@ function kitchenCtrl($scope,$state,dataService,$window){
             // }else{
             //     $state.go('register')
             // }
-            console.log("exec")
             $state.go('kitchenSheets') 
         }        
     }
 } 
  
-kitchenCtrl.$inject=['$scope','$state','dataService','$window'];
+kitchenCtrl.$inject=['$scope','$state','dataService','$window','$localStorage'];
 export default kitchenCtrl;

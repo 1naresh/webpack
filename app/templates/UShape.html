@@ -9,4 +9,46 @@
     {{500 + (((Math.floor(wallA/12) + Math.floor(wallB/12) + Math.floor(wallC/12)) - 5) * 200)}}
 </P>
 <p ng-if="warning">enter values</p>
-<button type="button" ng-click="toRegister()" class="btn">next</button>
+
+<button type="button" ng-click="toRegister()" class="button">next</button>
+<img width="200px" src="https://super.homelane.com/u-shaped-yellow-2.png"/>
+
+<div>
+    <h1>Details</h1> 
+    <h2>products</h2>
+    <ul>
+        <li>
+            {{products[0]}} => {{kitchenShape}} =>
+            <span ng-if="isKitchen">
+                <span ng-if="(Math.floor(wallA/12)  +  Math.floor(wallB/12)  + Math.floor(wallC/12)) <= 5">
+                    {{(Math.floor(wallA/12) + Math.floor(wallB/12) + Math.floor(wallC/12)) * 100}}
+                </span>
+                <span ng-if="(Math.floor(wallA/12) + Math.floor(wallB/12) + Math.floor(wallC/12))>5">
+                    {{500 + (((Math.floor(wallA/12) + Math.floor(wallB/12) + Math.floor(wallC/12)) - 5) * 200)}}
+                </span>
+            </span>
+            <span ng-if="isBed">
+                {{kitchenAamount}} 
+            </span>=>
+            <span ng-if="kitchenCost1">{{kitchenCost1}} </span>=>
+            <span ng-if="kitchenCost2">{{kitchenCost2}} </span>
+        </li>
+        <li>
+            {{products[1]}} => {{bedroomType}} =>
+            <span ng-if="isBed">
+                <span ng-if="(Math.floor(wallA/12)  +  Math.floor(wallB/12)  + Math.floor(wallC/12)) <= 5">
+                    {{(Math.floor(wallA/12) + Math.floor(wallB/12) + Math.floor(wallC/12)) * 100}}
+                </span>
+                <span ng-if="(Math.floor(wallA/12) + Math.floor(wallB/12) + Math.floor(wallC/12))>5">
+                    {{500 + (((Math.floor(wallA/12) + Math.floor(wallB/12) + Math.floor(wallC/12)) - 5) * 200)}}
+                </span>
+            </span>
+        </li>
+        <li>
+            full interiors  
+            <span ng-if="products[2]">selected</span>
+            <span ng-if="!products[2]">not selected</span>
+        </li>
+    </ul>
+</div>
+

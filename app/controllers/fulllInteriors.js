@@ -1,28 +1,51 @@
 
-function fulllInteriorsCtrl($scope,$state,dataService){
-    var user= dataService.user;
-    var interiors=[]
+function fulllInteriorsCtrl($scope,$state,dataService,$localStorage){
+    var user=$localStorage.user;
+    $scope.products=user.products;
+    $scope.kitchenShape=user.kitchenShape
+    $scope.kitchenAamount=user.kitchenAamount; 
+    $scope.kitchenCost1=user.kitchenCost1
+    $scope.kitchenCost2=user.kitchenCost2;
+    $scope.bedroomType=user.bedroomType;
+    $scope.bedRoomAmount=user.bedRoomAmount;
+    $scope.bedroomCost1=user.bedroomCost1;
+    $scope.bedroomCost2=user.bedroomCost2;
+    $scope.interiors=[]
+    $scope.isEntertainment=function(){
+        if($scope.entertainment){
+            $scope.interiors.push('Entertainment Unit')
+        }else{
+            var index=$scope.interiors.indexOf('Entertainment Unit')
+            $scope.interiors.splice(index,1)
+        }
+    }
+    $scope.isStudy=function(){
+        if($scope.study){
+            $scope.interiors.push('Study Unit')
+        }else{
+            var index=$scope.interiors.indexOf('Study Unit')
+            $scope.interiors.splice(index,1)
+        }
+    }
+    $scope.isCrockery=function(){
+        if($scope.crockery){
+            $scope.interiors.push('Crockery Unit')
+        }else{
+            var index=$scope.interiors.indexOf('Crockery Unit')
+            $scope.interiors.splice(index,1)
+        }
+    }
     $scope.toRegister=function(){
-        if($scope.isEntertainment){
-            interiors.push('Entertainment Unit')
-        }
-        if($scope.isStudy){
-            interiors.push('Study Unit')
-        }
-        if($scope.isCrockery){
-            interiors.push('Crockery Unit')
-        }
-        user.interiors=interiors
-        $state.go('register') 
+        user.interiors=$scope.interiors;
+        $state.go('final') 
     }
     $scope.back=function(){
-        console.log(dataService.user.products)
-        if(dataService.user.products.indexOf('wardrobe') == 1){
+        if(user.products.indexOf('wardrobe') == 1){
             $state.go('wordrobes')
         }else{
             $state.go('shapes')
         }
     }
 }
-fulllInteriorsCtrl.$inject=['$scope','$state','dataService'];
+fulllInteriorsCtrl.$inject=['$scope','$state','dataService','$localStorage'];
 export default fulllInteriorsCtrl;

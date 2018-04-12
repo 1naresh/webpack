@@ -1,8 +1,9 @@
 
-function homeCtrl($scope,$state,$stateParams){
+function homeCtrl($scope,$state,$stateParams,$localStorage){
+    $localStorage.user={}
     $scope.toProducts=function(){
-        $state.go('products')
+        $state.go('register')
     }
 }
-homeCtrl.$inject=['$scope','$state','$stateParams'];
+homeCtrl.$inject=['$scope','$state','$stateParams','$localStorage'];
 export default homeCtrl;
