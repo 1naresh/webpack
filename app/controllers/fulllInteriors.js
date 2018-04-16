@@ -38,7 +38,7 @@ function fulllInteriorsCtrl($scope,$state,dataService,$localStorage){
     }
     $scope.toRegister=function(){
         user.interiors=$scope.interiors;
-        $state.go('final') 
+        $state.go('hardware') 
     }
     $scope.back=function(){
         if(user.products.indexOf('wardrobe') == 1){

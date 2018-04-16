@@ -381,3 +381,15 @@ tr:nth-child(even) {
     font-weight: 500;
     color: #000000;
 }
+.thicker {
+    font-weight: 900;
+}
+.product1{
+  margin: 6px;
+}
+.img {
+      border-radius: 24%;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+.pointer {cursor: pointer;}

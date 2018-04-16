@@ -1,5 +1,15 @@
 
+import img2 from '../img/2.jpg';
+import img3 from '../img/3.jpg';
+import img4 from '../img/4.jpg';
+import img5 from '../img/5.jpg';
+import img6 from '../img/6.jpg';
 function kitchenSheetsCtrl($scope,$state,dataService,$window,$localStorage){
+    document.getElementById('2img').src=img2 
+    document.getElementById('3img').src=img3 
+    document.getElementById('4img').src=img4 
+    document.getElementById('5img').src=img5 
+    document.getElementById('6img').src=img6 
     $scope.heading="kitchen sheets";
     var user=$localStorage.user;
     $scope.products=user.products;
@@ -26,7 +36,7 @@ function kitchenSheetsCtrl($scope,$state,dataService,$window,$localStorage){
             }else if(user.products.indexOf('fullInteriors') == 2){
                 $state.go('fullInteriors')
             }else{
-                $state.go('final')
+                $state.go('hardware')
             }
         }
         else{

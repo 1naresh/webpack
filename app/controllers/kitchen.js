@@ -60,9 +60,9 @@ function kitchenCtrl($scope,$state,dataService,$window,$localStorage){
         }
         $localStorage.user.kitchenAamount=amount
         $localStorage.user.kitchenSize=size
-        $localStorage.user.kitchenwallA=wallA
-        $localStorage.user.kitchenwallB=wallB
-        $localStorage.user.kitchenwallC=wallC
+        $localStorage.user.kitchenwallA=parseFloat(($scope.wallA/12).toFixed(1))
+        $localStorage.user.kitchenwallB=parseFloat(($scope.wallB/12).toFixed(1))
+        $localStorage.user.kitchenwallC=parseFloat(($scope.wallC/12).toFixed(1))
     }
     $scope.toRegister=function(){
         calculate()

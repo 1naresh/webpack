@@ -29,7 +29,7 @@ function bedroomSheetsCtrl($scope,$window,dataService,$state,$localStorage){
             if((user.products.indexOf('fullInteriors') == 2) || (user.products.indexOf('fulllInteriors') == 1)){
                 $state.go('fullInteriors')
             }else{
-                $state.go('final')
+                $state.go('hardware')
             }
         }
         else{

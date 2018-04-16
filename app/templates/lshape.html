@@ -6,12 +6,11 @@
 <div class="fakeimg" style="background-color:#45d2b0;">
     <div class="slidecontainer">
         <input type="range" min="0" max="240" ng-model="wallA" class="slider">
-        <span class="es-value">{{Math.floor(wallA/12)}}fts{{wallA%12}}inches </span>
-        {{Math.floor(wallA/12)}}fts{{wallA%12}}inches        
+        <span class="es-value">{{Math.floor(wallA/12)}}fts{{wallA%12}}inches </span>     
     </div>
-    <div class="slidecontainer">
+    <div class="slidecontainer1">
         <input type="range" min="0" max="240" ng-model="wallB" class="slider">
-        <span class="es-value">{{Math.floor(wallB/12)}}fts{{wallB%12}}inches</span>
+        <span class="es-value1">{{Math.floor(wallB/12)}}fts{{wallB%12}}inches</span>
    </div>
         <!-- <P ng-if="Math.floor(wallA/12)+Math.floor(wallB/12)<=5">{{(Math.floor(wallA/12)+Math.floor(wallB/12))*100}}</P>
         <P ng-if="Math.floor(wallA/12)+Math.floor(wallB/12)>5">{{500+((Math.floor(wallA/12)+Math.floor(wallB/12)-5)*200)}}</P> -->
@@ -29,7 +28,7 @@
        <h4 style="background-color: black; color: white; text-align: center;">Estimate</h4>
        <table>
            <tr>
-    <th style="width:50%">Product</th>
+    <th>Product</th>
     <th>Selected</th>
     <th>Shape</th>
     <th>Cost</th>

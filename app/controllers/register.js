@@ -40,9 +40,9 @@ function registerCtrl($scope,$state,dataService,$localStorage){
             user.email=email;
             user.city=city;
             dataService.addDetails(user)
-            // .then(function(res){
-            //     user.id=res.data._id
-            // })
+            .then(function(res){
+                user.id=res.data._id
+            })
             $state.go('products')
         // }
         

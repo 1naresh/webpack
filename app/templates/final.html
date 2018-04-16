@@ -1,83 +1,109 @@
-
-<div class="result">
-    <button type="button" ng-click="toHome()" class="btn btn-success">
-        home
-    </button>
-    <div>
-        name<span>:{{result.name}}</span>
+<section>
+<div class="container-product">
+     <table>
+        <tr>
+    <th>Name</th>
+    <th>Email ID</th>
+    <th>Pnone No</th>
+    <th>City</th>
+    </tr>
+    <tr>
+        <td>{{result.name}}</td>
+        <td>{{result.email}}</td>
+        <td>{{result.phone}}</td>
+        <td>{{result.city}}</td>
+    </tr>
+    </table>
+    <div class="side">
+        <div class="fakeimg">
+       <h4 style="background-color: black; color: white; text-align: center;">Estimate</h4>
+    <table>
+        <tr>
+            <td class="thicker">products</td>
+            <td>{{result.products[0]}},{{result.products[1]}},{{result.products[2]}}</td>
+        </tr>
+        <tr>
+            <td class="thicker">kitchenShape</td>
+            <td><span>{{result.kitchenShape}}</span></td>
+        </tr>
+        <tr>
+            <td class="thicker">kitchenSize</td>
+            <td><span>{{result.kitchenSize}}</span></td>
+        </tr>
+        <tr ng-if="result.kitchenwallA">
+            <td class="thicker">kitchenwallA</td>
+            <td><span>{{result.kitchenwallA}}</span></td>
+        </tr>
+        <tr ng-if="result.kitchenwallB">
+            <td class="thicker">kitchenwallB</td>
+            <td><span>{{result.kitchenwallB}}</span></td>
+        </tr>
+        <tr ng-if="result.kitchenwallC">
+            <td class="thicker">kitchenwallC</td>
+            <td><span>{{result.kitchenwallC}}</span></td>
+        </tr>
+        <tr>
+            <td class="thicker">kitchenAamount</td>
+            <td><span>{{result.kitchenAamount}}</span></td>
+        </tr>
+        <tr>
+            <td class="thicker">kitchenCost1</td>
+            <td><span>{{result.kitchenCost1}}</span></td>
+        </tr>
+        <tr>
+            <td class="thicker">kitchenCost2</td>
+            <td><span>{{result.kitchenCost2}}</span></td>
+        </tr>
+         <tr ng-if="result.bedroomType">
+            <td class="thicker">bedroomType</td>
+            <td><span>{{result.bedroomType}}</span></td>
+        </tr>
+        <tr ng-if="result.bedRoomSize">
+            <td class="thicker">bedRoomSize</td>
+            <td><span>{{result.bedRoomSize}}</span></td>
+        </tr>
+        <tr ng-if="result.bedwallA">
+            <td class="thicker">bedwallA</td>
+            <td><span>{{result.bedwallA}}</span></td>
+        </tr>
+        <tr ng-if="result.bedwallB">
+            <td class="thicker">bedwallB</td>
+            <td><span>{{result.bedwallB}}</span></td>
+        </tr>
+        <tr ng-if="result.bedwallC">
+            <td class="thicker">bedwallC</td>
+            <td><span>{{result.bedwallC}}</span></td>
+        </tr>
+        <tr ng-if="result.bedRoomAmount">
+            <td class="thicker">bedRoomAmount</td>
+            <td><span>{{result.bedRoomAmount}}</span></td>
+        </tr>
+        <tr ng-if="result.bedroomCost1">
+            <td class="thicker">bedroomCost1</td>
+            <td><span>{{result.bedroomCost1}}</span></td>
+        </tr>
+        <tr ng-if="result.bedroomCost2">
+            <td class="thicker">bedroomCost2</td>
+            <td><span>{{result.bedroomCost2}}</span></td>
+        </tr>
+         <tr ng-if="result.interiors">
+            <td class="thicker">interiors</td>
+            <td><span style="margin-left:0px" ng-repeat="x in result.interiors">{{x}} </span></td>
+        </tr>
+    </table>
     </div>
-    <div>
-        email<span>:{{result.email}}</span>
     </div>
-    <div>
-        phone<span>:{{result.phone}}</span>
-    </div>
-    <div>
-        city<span>:{{result.city}}</span>
-    </div>
-    <div>
-        products:
-        <span>
-            {{result.products[0]}},{{result.products[1]}},{{result.products[2]}}
-        </span>
-    <div>              
-    <div>kitchenShape<span>:{{result.kitchenShape}}</span></div>
-    <div>kitchenSize<span>:{{result.kitchenSize}}</span></div>
-    <div ng-if="result.kitchenwallA">
-        kitchenwallA<span>:{{result.kitchenwallA}}</span>
-    </div>
-    <div ng-if="result.kitchenwallB">
-        kitchenwallB<span>:{{result.kitchenwallB}}</span>
-    </div>
-    <div ng-if="result.kitchenwallC">
-        kitchenwallC<span>:{{result.kitchenwallC}}</span>
-    </div>
-    <div>
-        kitchenAamount<span>:{{result.kitchenAamount}}</span>
-    </div>
-    <div>
-        kitchenCost1<span>:{{result.kitchenCost1}}</span>
-    </div>
-    <div>
-        kitchenCost2<span>:{{result.kitchenCost2}}</span>
-    </div>
-    <div ng-if="result.bedroomType">
-        bedroomType<span>:{{result.bedroomType}}</span>
-    </div>
-    <div ng-if="result.bedRoomSize">
-        bedRoomSize<span>:{{result.bedRoomSize}}</span>
-    </div>
-    <div ng-if="result.bedwallA">
-        bedwallA<span>:{{result.bedwallA}}</span>
-    </div>
-    <div ng-if="result.bedwallB">
-        bedwallB<span>:{{result.bedwallB}}</span>
-    </div>
-    <div ng-if="result.bedwallC">
-        bedwallC<span>:{{result.bedwallC}}</span>
-    </div><br>
-    <div ng-if="result.bedRoomAmount">
-        bedRoomAmount<span>:{{result.bedRoomAmount}}</span>
-    </div>
-    <div ng-if="result.bedroomCost1">
-        bedroomCost1<span>:{{result.bedroomCost1}}</span>
-    </div>
-    <div ng-if="result.bedroomCost2">
-        bedroomCost2<span>:{{result.bedroomCost2}}</span>
-    </div>
-    <div ng-if="result.interiors">
-        interiors<span>:<span style="margin-left:0px" ng-repeat="x in result.interiors">{{x}} </span></span>
-    </div>
-    <h1>
-        total amount:  
-        <span>
+<table>
+    <tr style="background-color: #26da85;">
+        <td><h3 class="thicker">Total Amount </h3></td>
+        <td><h3>
             {{result.bedRoomAmount+result.bedroomCost1+result.bedroomCost2+
             result.kitchenAamount+result.kitchenCost1+result.kitchenCost2}}
-        </span>
-    </h1>    
+        </h3></td>
+    </tr>  
+    </table>  
 </div>
-
-<button ng-click="edit()">edit</button>  
+</secation>
 <!-- <form ng-submit="submit(result)">
     name:<input type="text" ng-model="result.name"/>
     email:<input type="text" ng-model="result.email"/>

@@ -11,6 +11,7 @@ import registerTpl from './templates/register.html';
 import phoneVerifyTpl from './templates/phoneVerify.html'; 
 import finalTpl from './templates/final.html'; 
 import sheetsTpl from './templates/sheets.html'; 
+import hardwareTpl from './templates/hardware.html';
 
 import homeCtrl from './controllers/home';
 import productsCtrl from './controllers/products';
@@ -24,6 +25,7 @@ import finalCtrl from './controllers/final';
 import fulllInteriorsCtrl from './controllers/fulllInteriors';
 import kitchenSheetsCtrl from './controllers/kitchenSheets';
 import bedroomSheetsCtrl from './controllers/bedroomSheets';
+import haredwareCtrl from './controllers/hardware';
 function config($stateProvider,$urlRouterProvider){
     $stateProvider
     .state({
@@ -193,6 +195,16 @@ function config($stateProvider,$urlRouterProvider){
             "main":{
                 template:sheetsTpl,
                 controller:bedroomSheetsCtrl
+            }
+        }
+    })
+    .state({
+        name:"hardware",
+        url:"/hardware",
+        views:{
+            "main":{
+                template:hardwareTpl,
+                controller:haredwareCtrl
             }
         }
     })

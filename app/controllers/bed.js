@@ -49,9 +49,9 @@ function bedCtrl($scope,$window,dataService,$state,$localStorage){
         }
         $localStorage.user.bedRoomAmount=amount;
         $localStorage.user.bedRoomSize=size;
-        $localStorage.user.bedwallA=wallA;
-        $localStorage.user.bedwallB=wallB;
-        $localStorage.user.bedwallC=wallC;
+        $localStorage.user.bedwallA=parseFloat(($scope.wallA/12).toFixed(1))
+        $localStorage.user.bedwallB=parseFloat(($scope.wallA/12).toFixed(1))
+        $localStorage.user.bedwallC=parseFloat(($scope.wallA/12).toFixed(1))
     }
     $scope.toRegister=function(){
         calculate()
