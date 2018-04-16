@@ -1,0 +1,27 @@
+var mongoose =require("mongoose");
+var schema=new mongoose.Schema({
+    bedRoomAmount:Number,
+    bedRoomSize:Number,
+    bedroomCost1:Number,
+    bedroomCost2:Number,
+    bedroomType:String,
+    bedwallA:Number,
+    bedwallB:Number,
+    bedwallC:Number,
+    city:String,
+    email:String, 
+    interiors:[],
+    kitchenAamount:Number,
+    kitchenCost1:Number,
+    kitchenCost2:Number,
+    kitchenShape:String,
+    kitchenSize:Number,
+    kitchenwallA:Number,
+    kitchenwallB:Number,
+    kitchenwallC:Number,
+    name:String,
+    otp:Number,
+    phone:String,
+    products:[], 
+})
+module.exports=mongoose.model('user',schema)
