@@ -1,6 +1,9 @@
-<h3>i need following interior products</h3>
+<section>
+<h3 style="    text-align: center;">i need following interior products</h3>
+<div class="container-product">
 <div class="row">
-    <div class="column" style="background-color:#aaa;">
+<div class="side">
+    <div class="fakeimg" style="background-color:#45d2b0;">
         <div class="product col-md-8" ng-mouseover="over('kitchen')" ng-mouseleave="leave('kitchen')" id="kitchen">
             <input type="checkbox" ng-model="kitchen" ng-checked="true" disabled=true>kitchen
         </div>
@@ -10,23 +13,44 @@
         <div class="product col-md-8" ng-mouseover="over('fullInteriors')" ng-mouseleave="leave('fullInteriors')" id="fullInteriors">
             <input type="checkbox" ng-model="fullInteriors" ng-change="isInterior()">fullInteriors
         </div>
+        </div>
+
     </div>
-    <div class="column" style="background-color:#bbb;">
+    <div class="side">
+    <div class="fakeimg" style="background-color:#45d2b0;">
         <div ng-if="kitchenImg"><img width="200px"  src="https://super.homelane.com/kitchen-grey-2.png"/></div>
         <div ng-if="wardrobeImg"><img width="200px"  src="https://super.homelane.com/wardrobe-grey.png"/></div>
         <div ng-if="InteriorImage"><img width="200px"  src="https://super.homelane.com/interiors-grey-2.png"/></div> 
     </div>
-    <div class="column">
-        <h1>Details</h1> 
-        <h2>products</h2>
-        <ul>
-            <li> kitchen <span> selected </span> </li> 
-            <li> wardrobe <span ng-if="products[1]"> selected </span> </li> 
-            <li> fullInteriors <span ng-if="products[2]"> selected </span> </li> 
-        </ul>
+    </div>
+    <div class="side">
+        <div class="fakeimg">
+       <h4 style="background-color: black; color: white; text-align: center;">Estimate</h4> 
+      
+    <table>
+    <tr>
+    <th style="width:50%">Product</th>
+    <th>Selected</th>
+    </tr>
+     <tr>
+    <td>kitchen</td>
+    <td>selected</td>
+  </tr>
+   <tr>
+    <td>wardrobe</td>
+    <td><span ng-if="products[1]"> selected </span></td>
+  </tr>
+        <tr>
+    <td>fullInteriors</td>
+    <td><span ng-if="products[2]"> selected </span></td>
+  </tr>    
+        </table>
     </div>
 </div>
+</div>
+
 <button type="button" ng-click="back()" class="button">back</button>
 <button type="button" ng-click="toShape()" class="button">next</button>
 
- 
+ </div>
+ </section>

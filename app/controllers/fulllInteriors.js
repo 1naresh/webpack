@@ -10,7 +10,8 @@ function fulllInteriorsCtrl($scope,$state,dataService,$localStorage){
     $scope.bedRoomAmount=user.bedRoomAmount;
     $scope.bedroomCost1=user.bedroomCost1;
     $scope.bedroomCost2=user.bedroomCost2;
-    $scope.interiors=[]
+    $scope.interiors=[];
+    $scope.isFullInteriors=true;
     $scope.isEntertainment=function(){
         if($scope.entertainment){
             $scope.interiors.push('Entertainment Unit')

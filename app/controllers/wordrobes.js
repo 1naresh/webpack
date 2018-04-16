@@ -7,6 +7,7 @@ function wordrobesCtrl($scope,$state,dataService,$localStorage){
     $scope.kitchenCost1=user.kitchenCost1
     $scope.kitchenCost2=user.kitchenCost2;
     $scope.bedroomType=""
+    $scope.isWordrobe=true
     $scope.selectShape=function(number){
         if(number == '1'){
             $scope.bedroomType='singleBed'

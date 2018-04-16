@@ -1,4 +1,8 @@
+<section>
 <h1>{{heading}}</h1>
+<div class="container-product">
+<div class="row">
+<div class="side">
 <div class="btns-group">
     <div class="row">
         <ul>
@@ -19,24 +23,68 @@
         </ul>
     </div>
 </div>
-<button type="button" ng-click="toRegister()" class="button">next</button>
-<p ng-if="warning">please select</p>
-<button type="button" ng-click="back()" class="button">back</button>
-<div>
-    <ul>
-        <li>
-            {{products[0]}} => {{kitchenShape}} => {{kitchenAamount}} =>
-            estCost1: {{kitchenCost1}} =>estCost2 :{{kitchenCost2}}
-        </li>
-        <li>
-            {{products[1]}} =>
-            <span ng-if="isBedSheets">
-                {{bedroomType}}=>{{bedRoomAmount}}=>
-                estCost1: {{bedroomCost1}} estCost2: {{bedroomCost2}}
-            </span>
-        </li>
-        <li>
-            {{products[2]}}
-        </li>
-    </ul>
 </div>
+<p ng-if="warning">please select</p>
+
+<div class="side">
+        <div class="fakeimg">
+       <h4 style="background-color: black; color: white; text-align: center;">Estimate</h4> 
+    <table>
+        <tr>
+            <th style="width:50%">Product</th>
+            <th>Selected</th>
+            <th>Shape</th>
+            <th>Cost</th>
+        </tr>
+        <tr>
+             <td>kitchen</td>
+             <td ng-if="products[0]">selected</td>
+             <td>{{kitchenShape}}</td>
+             <td>{{kitchenAamount}}</td>
+        </tr>
+        <tr ng-if="kitchenCost1">
+                <td>Wood Sheet</td>
+                <td></td>
+                <td></td>
+                <td>{{kitchenCost1}}</td>
+        </tr>
+         <tr ng-if="kitchenCost2">
+                <td>Membrane</td>
+                <td></td>
+                <td></td>
+                <td>{{kitchenCost2}}</td>
+        </tr>
+        <tr ng-if="isBedSheets">
+            <td>wordrobe</td>
+            <td><span ng-if="products[1]">selected</span></td>
+            <td><span ng-if="!products[1]">not selected</span></td>
+            <td ng-if="isBedSheets">{{bedroomType}}</td>
+        </tr>
+        <tr ng-if="bedroomCost1">
+            <td>Wood Sheet</td>
+                <td></td>
+                <td></td>
+            <td>{{bedroomCost1}}</td>
+        </tr>
+        <tr ng-if="bedroomCost2">
+            <td>Membrane</td>
+                <td></td>
+                <td></td>
+                 <td>{{bedroomCost2}}</td>
+        </tr>
+        <tr ng-if="isFullInteriors">
+            <td>full interiors</td>
+            <td><span ng-if="products[2]">selected</span>
+            <span ng-if="!products[2]">not selected</span>
+        </tr>
+
+    </table>
+    </div>
+    </div>
+    </div>
+     <div class="fakeimg">
+    <button type="button" ng-click="back()" class="button">back</button>
+    <button type="button" ng-click="toRegister()" class="button">next</button>
+</div>
+</div>
+</section>

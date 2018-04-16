@@ -1,17 +1,26 @@
+
 <div class="result">
-    <button type="button" ng-click="toHome()" class="btn btn-success">home</button>
-    <div>name<span>:{{result.name}}</span></div>
-    <div>email<span>:{{result.email}}</span></div>
-    <div>phone<span>:{{result.phone}}</span></div>
-    <div>city<span>:{{result.city}}</span></div>
+    <button type="button" ng-click="toHome()" class="btn btn-success">
+        home
+    </button>
     <div>
-        products
-        <span>:
-            <span style="margin-left:0px" ng-repeat="x in result.products">
-                {{x}} 
-            </span>
+        name<span>:{{result.name}}</span>
+    </div>
+    <div>
+        email<span>:{{result.email}}</span>
+    </div>
+    <div>
+        phone<span>:{{result.phone}}</span>
+    </div>
+    <div>
+        city<span>:{{result.city}}</span>
+    </div>
+    <div>
+        products:
+        <span>
+            {{result.products[0]}},{{result.products[1]}},{{result.products[2]}}
         </span>
-    <div>
+    <div>              
     <div>kitchenShape<span>:{{result.kitchenShape}}</span></div>
     <div>kitchenSize<span>:{{result.kitchenSize}}</span></div>
     <div ng-if="result.kitchenwallA">
@@ -23,9 +32,15 @@
     <div ng-if="result.kitchenwallC">
         kitchenwallC<span>:{{result.kitchenwallC}}</span>
     </div>
-    <div>kitchenAamount<span>:{{result.kitchenAamount}}</span></div>
-    <div>kitchenCost1<span>:{{result.kitchenCost1}}</span></div>
-    <div>kitchenCost2<span>:{{result.kitchenCost2}}</span></div>
+    <div>
+        kitchenAamount<span>:{{result.kitchenAamount}}</span>
+    </div>
+    <div>
+        kitchenCost1<span>:{{result.kitchenCost1}}</span>
+    </div>
+    <div>
+        kitchenCost2<span>:{{result.kitchenCost2}}</span>
+    </div>
     <div ng-if="result.bedroomType">
         bedroomType<span>:{{result.bedroomType}}</span>
     </div>
@@ -52,12 +67,21 @@
     </div>
     <div ng-if="result.interiors">
         interiors<span>:<span style="margin-left:0px" ng-repeat="x in result.interiors">{{x}} </span></span>
-    <div>
+    </div>
     <h1>
         total amount:  
         <span>
             {{result.bedRoomAmount+result.bedroomCost1+result.bedroomCost2+
             result.kitchenAamount+result.kitchenCost1+result.kitchenCost2}}
         </span>
-    </h1>
-</div> 
+    </h1>    
+</div>
+
+<button ng-click="edit()">edit</button>  
+<!-- <form ng-submit="submit(result)">
+    name:<input type="text" ng-model="result.name"/>
+    email:<input type="text" ng-model="result.email"/>
+    phone:<input type="text" ng-model="result.phone"/>
+    <button type="submit">submit</button>
+</form>
+     -->

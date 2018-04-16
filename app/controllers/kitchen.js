@@ -1,5 +1,21 @@
+import lShapeImg from '../img/l-shape.png';
+import pShapeImg from '../img/p-shape.png';
+import uShapeImg from '../img/u-shape.png';
+import sShapeImg from '../img/s-shape.png';
 
 function kitchenCtrl($scope,$state,dataService,$window,$localStorage){
+    if($state.current.name == "LShape" ){
+        document.getElementById('lShapeImg').src=lShapeImg        
+    }
+    if($state.current.name == "UShape" ){
+        document.getElementById('uShapeImg').src=uShapeImg       
+    }
+    if($state.current.name == "parallelShape" ){
+        document.getElementById('pShapeImg').src=pShapeImg       
+    }
+    if($state.current.name == "straightShape" ){
+        document.getElementById('sShapeImg').src=sShapeImg     
+    }    
     $scope.isKitchen=true;
     $scope.isBed=false;
     $scope.heading='What is the size of your kitchen?';
@@ -60,6 +76,9 @@ function kitchenCtrl($scope,$state,dataService,$window,$localStorage){
             // }
             $state.go('kitchenSheets') 
         }        
+    }
+    $scope.back=function(){
+        $state.go('shapes')
     }
 } 
  

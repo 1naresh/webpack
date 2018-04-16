@@ -37,7 +37,7 @@ function bedroomSheetsCtrl($scope,$window,dataService,$state,$localStorage){
         }        
     }
     $scope.back=function(){
-        $state.go('wordrobes')
+        $state.go(user.bedroomType)
     }
 }
 bedroomSheetsCtrl.$inject=['$scope','$window','dataService','$state','$localStorage'];

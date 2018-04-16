@@ -20,11 +20,11 @@ function productsCtrl($scope,$state,dataService,$document,$stateParams,$localSto
         $localStorage.user.products=$scope.products; 
         $state.go('shapes')
     }
-    $scope.back=function(){
-        $state.go('home')
-    }
+    // $scope.back=function(){
+    //     $state.go('register')
+    // }
     $scope.over=function(product){
-        $document[0].getElementById(product).style.background='red'
+        $document[0].getElementById(product).style.background='#45d2b0'
         if(product=='wardrobe'){
             $scope.kitchenImg=false;
             $scope.wardrobeImg=true
@@ -35,7 +35,7 @@ function productsCtrl($scope,$state,dataService,$document,$stateParams,$localSto
         }
     }
     $scope.leave=function(product){        
-        $document[0].getElementById(product).style.background='#ffffff'
+        $document[0].getElementById(product).style.background='#45d2b0'
         if(product=='wardrobe'){
             $scope.wardrobeImg=false
             $scope.kitchenImg=true;

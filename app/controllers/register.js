@@ -39,9 +39,10 @@ function registerCtrl($scope,$state,dataService,$localStorage){
             user.phone=phone;
             user.email=email;
             user.city=city;
-            dataService.addDetails(user).then(function(res){
-                user.id=res.data._id
-            })
+            dataService.addDetails(user)
+            // .then(function(res){
+            //     user.id=res.data._id
+            // })
             $state.go('products')
         // }
         
@@ -59,13 +60,14 @@ function registerCtrl($scope,$state,dataService,$localStorage){
         // $state.go('final')
     } 
     $scope.back=function(){
-        if((user.products.indexOf('fulllInteriors') == 2) || (user.products.indexOf('fulllInteriors') == 1)){
-            $state.go('fulllInteriors')
-        }else if(user.products.indexOf('wardrobe') == 1 ){
-            $state.go('wardrobe')
-        }else{
-            $state.go('shapes')
-        }        
+        $state.go('home')
+        // if((user.products.indexOf('fulllInteriors') == 2) || (user.products.indexOf('fulllInteriors') == 1)){
+        //     $state.go('fulllInteriors')
+        // }else if(user.products.indexOf('wardrobe') == 1 ){
+        //     $state.go('wardrobe')
+        // }else{
+        //     $state.go('shapes')
+        // }        
     }
 }
 registerCtrl.$inject=['$scope','$state','dataService','$localStorage'] ;

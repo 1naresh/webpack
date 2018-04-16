@@ -34,7 +34,7 @@ function kitchenSheetsCtrl($scope,$state,dataService,$window,$localStorage){
         }        
     }
     $scope.back=function(){
-        $state.go('shapes')
+        $state.go(user.kitchenShape)
     }
 } 
  

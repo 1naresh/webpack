@@ -12,6 +12,12 @@ function finalCtrl($scope,$state,dataService,$localStorage){
     $scope.toHome=function(){
         $state.go('home')
     }
+    $scope.edit= () =>{
+        
+    }
+    $scope.submit=(obj)=>{
+        console.log(obj)
+    }
 }
 finalCtrl.$inject=['$scope','$state','dataService','$localStorage'];
 export default finalCtrl;
