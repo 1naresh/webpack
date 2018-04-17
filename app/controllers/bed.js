@@ -1,7 +1,5 @@
 
 function bedCtrl($scope,$window,dataService,$state,$localStorage){
-    $scope.iSkitchen=false;
-    $scope.isBed=true; 
     var user=$localStorage.user;
     $scope.products=user.products;
     $scope.kitchenShape=user.kitchenShape
@@ -63,6 +61,9 @@ function bedCtrl($scope,$window,dataService,$state,$localStorage){
             // }      
             $state.go('bedroomSheets')
         }        
+    }
+    $scope.back=function(){
+        $state.go('wordrobes')
     }
 }
 bedCtrl.$inject=['$scope','$window','dataService','$state','$localStorage'];

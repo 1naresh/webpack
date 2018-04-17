@@ -36,59 +36,17 @@
     <td>kitchen</td>
     <td>selected</td>
     <td>{{kitchenShape}} </td>
-    <td><span ng-if="isKitchen">
-                    <span ng-if="Math.floor(wallA/12)+Math.floor(wallB/12)>5">
-                        {{500+((Math.floor(wallA/12)+Math.floor(wallB/12)-5)*200)}}
-                    </span>
-                    <span ng-if="Math.floor(wallA/12)+Math.floor(wallB/12)<=5">
-                        {{(Math.floor(wallA/12)+Math.floor(wallB/12))*100}}
-                    </span>
-                </span>
-                <span ng-if="isBed">
-                    {{kitchenAamount}}
-                </span></td>
-                
-                
-  </tr>
-  <tr ng-if="isBed">
-  <td>woodsheet</td>
-    <td></td>
-    <td></td>
-    <td ng-if="kitchenCost1">{{kitchenCost1}}</td>
-  </tr>
-   <tr ng-if="isBed">
-  <td>Membrane</td>
-    <td></td>
-    <td></td>
-    <td ng-if="kitchenCost2">{{kitchenCost2}}</td>
-  </tr>
-   <tr ng-if="products[1] && isBed" >
-    <td>wordrobes</td>
-    <td ng-if="products[1]">selected</td>
-    <td ng-if="!products[1]">not selected </td>
-    <td ng-if="bedroomType">{{bedroomType}}</td>
-    <td ng-if="!bedroomType">type</td>
-    <td >
-        <span ng-if="isBed">
-        <span ng-if="Math.floor(wallA/12)+Math.floor(wallB/12)>5">
-            {{500+((Math.floor(wallA/12)+Math.floor(wallB/12)-5)*200)}}
+    <td>
+        <span>
+            <span ng-if="Math.floor(wallA/12)+Math.floor(wallB/12)>5">
+                {{500+((Math.floor(wallA/12)+Math.floor(wallB/12)-5)*200)}}
+            </span>
+            <span ng-if="Math.floor(wallA/12)+Math.floor(wallB/12)<=5">
+                {{(Math.floor(wallA/12)+Math.floor(wallB/12))*100}}
+            </span>
         </span>
-        <span ng-if="Math.floor(wallA/12)+Math.floor(wallB/12)<=5">
-            {{(Math.floor(wallA/12)+Math.floor(wallB/12))*100}}
-        </span>
-        </span>
-        <span ng-if="!isBed">
-            0
-        </span>
-
-    </td>                
-  </tr>
-  
-  <tr ng-if="isFullInteriors">
-            <td>full interiors</td>
-            <td><span ng-if="products[2]">selected</span>
-            <span ng-if="!products[2]">not selected</span>
-        </tr>
+    </td>     
+    </tr>
 
        </table>
     </div>

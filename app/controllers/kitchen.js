@@ -16,8 +16,6 @@ function kitchenCtrl($scope,$state,dataService,$window,$localStorage){
     if($state.current.name == "straightShape" ){
         document.getElementById('sShapeImg').src=sShapeImg     
     }    
-    $scope.isKitchen=true;
-    $scope.isBed=false;
     $scope.heading='What is the size of your kitchen?';
     $scope.products=$localStorage.user.products;
     $scope.kitchenShape=$localStorage.user.kitchenShape

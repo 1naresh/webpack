@@ -6,11 +6,15 @@ import UShapeTpl from './templates/UShape.html';
 import parallelShapeTpl from './templates/parallelShape.html';
 import straightShapeTpl from './templates/straightShape.html';
 import wordrobesTpl from './templates/wordrobes.html'; 
+import singleBedTpl from './templates/singleBed.html'; 
+import doubleBedTpl from './templates/doubleBed.html'; 
+import tripleBedTpl from './templates/tripleBed.html'; 
 import fulllInteriorsTpl from './templates/fulllInteriors.html'; 
 import registerTpl from './templates/register.html'; 
 import phoneVerifyTpl from './templates/phoneVerify.html'; 
 import finalTpl from './templates/final.html'; 
-import sheetsTpl from './templates/sheets.html'; 
+import kitchenSheetsTpl from './templates/kitchenSheets.html'; 
+import bedSheetsTpl from './templates/bedSheets.html'
 import hardwareTpl from './templates/hardware.html';
 
 import homeCtrl from './controllers/home';
@@ -113,7 +117,7 @@ function config($stateProvider,$urlRouterProvider){
         url:"/singleBed",
         views:{
             "main":{
-                template:straightShapeTpl,
+                template:singleBedTpl,
                 controller:bedCtrl
             }
         }
@@ -123,7 +127,7 @@ function config($stateProvider,$urlRouterProvider){
         url:"/doubleBed",
         views:{
             "main":{
-                template:LShapeTpl,
+                template:doubleBedTpl,
                 controller:bedCtrl
             }
         }
@@ -133,7 +137,7 @@ function config($stateProvider,$urlRouterProvider){
         url:"/tripleBed",
         views:{
             "main":{
-                template:UShapeTpl,
+                template:tripleBedTpl,
                 controller:bedCtrl
             }
         }
@@ -183,7 +187,7 @@ function config($stateProvider,$urlRouterProvider){
         url:"/kitchenSheets",
         views:{
             "main":{
-                template:sheetsTpl,
+                template: kitchenSheetsTpl,
                 controller:kitchenSheetsCtrl
             }
         }
@@ -193,7 +197,7 @@ function config($stateProvider,$urlRouterProvider){
         url:"/bedroomSheets",
         views:{
             "main":{
-                template:sheetsTpl,
+                template:bedSheetsTpl,
                 controller:bedroomSheetsCtrl
             }
         }
