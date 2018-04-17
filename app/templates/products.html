@@ -18,7 +18,7 @@
     </div>
     <div class="side">
     <div class="fakeimg" style="background-color:#45d2b0;">
-        <div ng-if="kitchenImg"><img width="200px"  src="https://super.homelane.com/kitchen-grey-2.png"/></div>
+        <div ng-if="kitchenImg"><img width="200px" id="kitchenImage" /></div>
         <div ng-if="wardrobeImg"><img width="200px"  src="https://super.homelane.com/wardrobe-grey.png"/></div>
         <div ng-if="InteriorImage"><img width="200px"  src="https://super.homelane.com/interiors-grey-2.png"/></div> 
     </div>
@@ -40,8 +40,8 @@
     <td>wardrobe</td>
     <td><span ng-if="products[1]"> selected </span></td>
   </tr>
-        <tr>
-    <td>fullInteriors</td>
+        <tr
+            <td>fullInteriors</td>
     <td><span ng-if="products[2]"> selected </span></td>
   </tr>    
         </table>

@@ -1,5 +1,6 @@
-
+import kitchenImage from '../img/Kitchen 1.png';
 function productsCtrl($scope,$state,dataService,$document,$stateParams,$localStorage){
+    document.getElementById('kitchenImage').src=kitchenImage
     $scope.products=['kitchen']
     $scope.kitchenImg=true;    
     $scope.isWordrobe=function(){

@@ -1,5 +1,14 @@
-
+import img2 from '../img/2.jpg';
+import img3 from '../img/3.jpg';
+import img4 from '../img/4.jpg';
+import img5 from '../img/5.jpg';
+import img6 from '../img/6.jpg';
 function bedroomSheetsCtrl($scope,$window,dataService,$state,$localStorage){
+    document.getElementById('2img').src=img2 
+    document.getElementById('3img').src=img3 
+    document.getElementById('4img').src=img4 
+    document.getElementById('5img').src=img5 
+    document.getElementById('6img').src=img6 
     $scope.isBedSheets=true;
     $scope.heading="bedroom sheets"
     var user=$localStorage.user;
