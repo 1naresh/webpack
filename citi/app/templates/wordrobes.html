@@ -1,0 +1,89 @@
+<section>
+<h3>I need wardrobe(s) for</h3>
+<div class="container-product">
+<div class="row">
+    <div class="side">
+    <div class="fakeimg" style="background-color:#45d2b0;">
+<div class="Shape" ng-mouseover="over(1)" >
+    <button type="button" ng-click="selectShape('1')" class="button">1 bed room</button>
+</div>
+<div class="Shape" ng-mouseover="over(2)">
+    <button type="button" ng-click="selectShape('2')" class="button">2 bed rooms</button>
+</div>
+<div class="Shape" ng-mouseover="over(3)">
+    <button type="button" ng-click="selectShape('3')" class="button">3 bed rooms</button>
+</div>
+</div>
+</div>
+<div class="side">
+    <div class="fakeimg" style="background-color:#45d2b0;">
+        <img width="200px" id="image" />
+    </div>
+    </div>
+<div class="side">
+        <div class="fakeimg">
+        <h4 style="background-color: black; color: white; text-align: center;">Estimate</h4> 
+        <table>
+        <tr>
+    <th>Product</th>
+    <th>Selected</th>
+    <th>Shape</th>
+    <th>cost</th>
+    </tr>
+    <tr>
+    <td>kitchen</td>
+    <td>selected</td>
+    <td><span ng-if="kitchenShape">{{kitchenShape}}</span></td>
+    <td><span ng-if="kitchenShape">{{kitchenAamount}}</span></td>
+  </tr>
+  <tr>
+    <td>Woodsheets</td>
+    <td></td>
+    <td></td>
+    <td>{{kitchenCost1}}</td>
+  </tr>
+  <tr>
+    <td>Membrance</td>
+    <td></td>
+    <td></td>
+    <td>{{kitchenCost2}}</td>
+  </tr>
+  <tr>
+    <td>wordrobe</td>
+    <td><span ng-if="products[1]">selected</span>
+    <span ng-if="!products[1]">notselected</span></td>
+    <td><span ng-if="bedroomType">{{bedroomType}} </span></td>
+    <td></td>
+  </tr>
+  <tr ng-if="isFullInteriors">
+    <td>fullinteriors</td>
+    <td><span ng-if="products[2]">selected</span></td>
+    <td><span ng-if="!products[2]">notselected</span></td>
+  </tr>
+        </table>
+    </div>
+</div>
+</div>
+ <div class="fakeimg">
+<button type="button" ng-click="back()" class="button">back</button> 
+<button type="button" ng-click="toShape()" class="button">next</button>  
+ </div>
+</div>
+ </section>
+
+<!-- <button type="button" ng-click="toShape()" class="button">next</button>  
+<button type="button" class="button" ng-click="back()">back</button>
+<div>
+    <ul>
+        <li>
+            {{products[0]}} => {{kitchenShape}} => {{kitchenAamount}} =>
+            kitchenCost1: {{kitchenCost1}} =>kitchenCost2:{{kitchenCost2}}
+        </li>
+        <li>
+            {{products[1]}} =>{{bedroomType}}
+        </li>
+        <li>
+            {{products[2]}} 
+        </li>
+    </ul>
+</div> -->

@@ -1,0 +1,85 @@
+<section>
+<h1>{{heading}}</h1>
+<div class="container-product">
+<div class="row">
+<div class="side">
+<div class="btns-group">
+    <div class="row">
+        <div ng-click="onSelect1(75)" class="pointer">
+            <img id="2img" width="127px" class="img" />
+        </div>
+        <div ng-click="onSelect1(75)" class="pointer">
+            <img id="3img" width="127px" class="img" />
+        </div>
+        <div ng-click="onSelect1(75)" class="pointer">
+            <img id="4img" width="127px" class="img" />
+        </div>
+        <div ng-click="onSelect1(75)" class="pointer">
+            <img id="5img" width="127px" class="img" />
+        </div>
+        <div ng-click="onSelect1(75)" class="pointer">
+            <img id="6img" width="127px" class="img" />
+        </div>
+    </div>
+    <div class="row">
+        <ul>
+            <li ng-repeat="cost in costs2">
+                <button type="button" ng-click="onSelect2(cost)">
+                    {{cost}}
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+    <div>
+        <input type="radio" ng-model="selectedHardware" value=1000>
+        hetich
+    </div>
+    <div>
+        <input type="radio" ng-model="selectedHardware" value=2000>
+        hafele/blum
+    </div>
+<p ng-if="warning">please select</p>
+
+<div class="side">
+        <div class="fakeimg">
+       <h4 style="background-color: black; color: white; text-align: center;">Estimate</h4> 
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Selected</th>
+            <th>Shape</th>
+            <th>Cost</th>
+        </tr>
+        <tr>
+             <td>kitchen</td>
+             <td ng-if="products[0]">selected</td>
+             <td>{{kitchenShape}}</td>
+             <td>{{kitchenAamount}}</td>
+        </tr>
+        <tr ng-if="kitchenCost1">
+                <td>Wood Sheet</td>
+                <td></td>
+                <td></td>
+                <td>{{kitchenCost1}}</td>
+        </tr>
+         <tr ng-if="kitchenCost2">
+                <td>Membrane</td>
+                <td></td>
+                <td></td>
+                <td>{{kitchenCost2}}</td>
+        </tr>
+        
+       
+
+    </table>
+    </div>
+    </div>
+    </div>
+     <div class="fakeimg">
+    <button type="button" ng-click="back()" class="button">back</button>
+    <button type="button" ng-click="toRegister()" class="button">next</button>
+</div>
+</div>
+</section>

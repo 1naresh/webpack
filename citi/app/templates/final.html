@@ -1,0 +1,113 @@
+<section>
+<div class="container-product">
+     <table>
+        <tr>
+    <th>Name</th>
+    <th>Email ID</th>
+    <th>Pnone No</th>
+    <th>City</th>
+    </tr>
+    <tr>
+        <td>{{result.name}}</td>
+        <td>{{result.email}}</td>
+        <td>{{result.phone}}</td>
+        <td>{{result.city}}</td>
+    </tr>
+    </table>
+    <div class="side">
+        <div class="fakeimg">
+       <h4 style="background-color: black; color: white; text-align: center;">Estimate</h4>
+    <table>
+        <tr>
+            <td class="thicker">products</td>
+            <td>{{result.products[0]}},{{result.products[1]}},{{result.products[2]}}</td>
+        </tr>
+        <tr>
+            <td class="thicker">kitchenShape</td>
+            <td><span>{{result.kitchenShape}}</span></td>
+        </tr>
+        <tr>
+            <td class="thicker">kitchenSize</td>
+            <td><span>{{result.kitchenSize}}</span></td>
+        </tr>
+        <tr ng-if="result.kitchenwallA">
+            <td class="thicker">kitchenwallA</td>
+            <td><span>{{result.kitchenwallA}}</span></td>
+        </tr>
+        <tr ng-if="result.kitchenwallB">
+            <td class="thicker">kitchenwallB</td>
+            <td><span>{{result.kitchenwallB}}</span></td>
+        </tr>
+        <tr ng-if="result.kitchenwallC">
+            <td class="thicker">kitchenwallC</td>
+            <td><span>{{result.kitchenwallC}}</span></td>
+        </tr>
+        <tr>
+            <td class="thicker">kitchenAamount</td>
+            <td><span>{{result.kitchenAamount}}</span></td>
+        </tr>
+        <tr>
+            <td class="thicker">kitchenCost1</td>
+            <td><span>{{result.kitchenCost1}}</span></td>
+        </tr>
+        <tr>
+            <td class="thicker">kitchenCost2</td>
+            <td><span>{{result.kitchenCost2}}</span></td>
+        </tr>
+         <tr ng-if="result.bedroomType">
+            <td class="thicker">bedroomType</td>
+            <td><span>{{result.bedroomType}}</span></td>
+        </tr>
+        <tr ng-if="result.bedRoomSize">
+            <td class="thicker">bedRoomSize</td>
+            <td><span>{{result.bedRoomSize}}</span></td>
+        </tr>
+        <tr ng-if="result.bedwallA">
+            <td class="thicker">bedwallA</td>
+            <td><span>{{result.bedwallA}}</span></td>
+        </tr>
+        <tr ng-if="result.bedwallB">
+            <td class="thicker">bedwallB</td>
+            <td><span>{{result.bedwallB}}</span></td>
+        </tr>
+        <tr ng-if="result.bedwallC">
+            <td class="thicker">bedwallC</td>
+            <td><span>{{result.bedwallC}}</span></td>
+        </tr>
+        <tr ng-if="result.bedRoomAmount">
+            <td class="thicker">bedRoomAmount</td>
+            <td><span>{{result.bedRoomAmount}}</span></td>
+        </tr>
+        <tr ng-if="result.bedroomCost1">
+            <td class="thicker">bedroomCost1</td>
+            <td><span>{{result.bedroomCost1}}</span></td>
+        </tr>
+        <tr ng-if="result.bedroomCost2">
+            <td class="thicker">bedroomCost2</td>
+            <td><span>{{result.bedroomCost2}}</span></td>
+        </tr>
+         <tr ng-if="result.interiors">
+            <td class="thicker">interiors</td>
+            <td><span style="margin-left:0px" ng-repeat="x in result.interiors">{{x}} </span></td>
+        </tr>
+    </table>
+    </div>
+    </div>
+<table>
+    <tr style="background-color: #26da85;">
+        <td><h3 class="thicker">Total Amount </h3></td>
+        <td><h3>
+            {{result.bedRoomAmount+result.bedroomCost1+result.bedroomCost2+
+            result.kitchenAamount+result.kitchenCost1+result.kitchenCost2}}
+        </h3></td>
+    </tr>  
+    </table>  
+</div>
+</secation>
+<!-- <form ng-submit="submit(result)">
+    name:<input type="text" ng-model="result.name"/>
+    email:<input type="text" ng-model="result.email"/>
+    phone:<input type="text" ng-model="result.phone"/>
+    <button type="submit">submit</button>
+</form>
+     -->

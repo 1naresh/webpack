@@ -1,0 +1,106 @@
+<section>
+<h3>Select Add-on Products</h3>
+<div class="container-product">
+<div class="row">
+<div class="side">
+<div class="fakeimg" style="background-color:#45d2b0;">
+    <div class="slidecontainer">
+     <div class="product1">
+            <img  width="100px" id="entertainment"/><br>
+            <input type="checkbox" ng-model="entertainment" ng-change="isEntertainment()"/>Entertainment Unit
+        </div>
+        <div class="product1">
+            <img  width="100px" id="study"/><br>
+            <input type="checkbox" ng-model="study" ng-change="isStudy()"/>Study Unit
+        </div>
+        <div class="product1">
+            <img  width="100px" id="crockery"/><br>
+            <input type="checkbox" ng-model="crockery" ng-change="isCrockery()"/>Crockery Unit
+        </div>
+</div>
+</div>
+</div>
+<div class="side">
+        <div class="fakeimg">
+       <h4 style="background-color: black; color: white; text-align: center;">Estimate</h4> 
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Selected</th>
+            <th>Shape</th>
+            <th>Cost</th>
+        </tr>
+        <tr>
+             <td>kitchen</td>
+             <td ng-if="products[0]">selected</td>
+             <td>{{kitchenShape}}</td>
+             <td>{{kitchenAamount}}</td>
+        </tr>
+        <tr ng-if="kitchenCost1">
+                <td>Wood Sheet</td>
+                <td></td>
+                <td></td>
+                <td>{{kitchenCost1}}</td>
+        </tr>
+         <tr ng-if="kitchenCost2">
+                <td>Membrane</td>
+                <td></td>
+                <td></td>
+                <td>{{kitchenCost2}}</td>
+        </tr>
+        <tr>
+            <td>wordrobe</td>
+            <td><span ng-if="products[1]">selected</span></td>
+            <td><span ng-if="!products[1]">not selected</span></td>
+            <td ng-if="isBedSheets">{{bedroomType}}</td>
+        </tr>
+        <tr ng-if="bedroomCost1">
+            <td>Wood Sheet</td>
+                <td></td>
+                <td></td>
+            <td>{{bedroomCost1}}</td>
+        </tr>
+        <tr ng-if="bedroomCost2">
+            <td>Membrane</td>
+                <td></td>
+                <td></td>
+                 <td>{{bedroomCost2}}</td>
+        </tr>
+        <tr>
+            <td>full interiors</td>
+            <td><span ng-if="products[2]">selected</span>
+            <span ng-if="!products[2]">not selected</span></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+    </table>
+    </div>
+    </div>
+</div>
+<button type="button" ng-click="back()" class="button">back</button>
+    <button  ng-click="toRegister()" class="button" >next</button>
+</div>
+</section>
+
+
+<!-- <div>
+    <ul>
+        <li>
+            {{products[0]}} => {{kitchenShape}} => {{kitchenAamount}} =>
+            {{kitchenCost1}}=>{{kitchenCost2}} 
+        </li>
+        <li>
+            {{products[1]}} => {{bedroomType}} => {{bedRoomAmount}}  =>
+            {{bedroomCost1}} => {{bedroomCost2}}
+        </li>
+        <li>
+            {{products[2]}}
+            <ul>
+                <li>{{interiors[0]}} </li>
+                <li>{{interiors[1]}} </li>
+                <li>{{interiors[2]}} </li>
+            </ul>
+        </li>
+    </ul>
+</div> -->

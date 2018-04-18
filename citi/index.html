@@ -1,0 +1,31 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+    <body>
+  <div class="topnav" id="myTopnav">
+  <a href="#home" class="active" ng-click="toHome()">Home</a>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+        <div ng-app="app">
+            <div ui-view="main"></div>
+            
+        </div>
+        <footer class="footer">
+            
+        </footer>
+        <script src="/script.js"></script>
+    </body>
+</html>
+<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>

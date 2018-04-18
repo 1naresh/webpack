@@ -1,0 +1,96 @@
+<section>
+<h3>{{heading}}</h3>
+<div class="container-product">
+<div class="row">
+<div class="side">
+<div class="fakeimg" style="background-color:#45d2b0;">
+    <div class="slidecontainer">
+    
+<input type="range" min="0" max="240" ng-model="wallA" class="slider">
+<span class="es-value">
+   <span> {{Math.floor(wallA/12)}}</span>fts <span>{{wallA%12}}</span>inches 
+    </span></div>
+<!-- <P ng-if="Math.floor(wallA/12) <= 5">{{Math.floor(wallA/12) * 100}}</P>
+<P ng-if="Math.floor(wallA/12) > 5">{{500+((Math.floor(wallA/12)-5)*200)}}</P> -->
+<p ng-if="warning">each must be greater than 1 or equal feet</p>
+</div>
+</div>
+<div class="side">
+    <div class="fakeimg" style="background-color:#45d2b0;">
+    <img width="200px" id="sShapeImg" />
+    </div>
+    </div>
+<div class="side">
+        <div class="fakeimg">
+       <h4 style="background-color: black; color: white; text-align: center;">Estimate</h4>
+       <table>
+           <tr>
+    <th >Product</th>
+    <th>Selected</th>
+    <th>Shape</th>
+    <th>Cost</th>
+    </tr>
+    <tr>
+    <td>kitchen</td>
+    <td>selected</td>
+    <td>{{kitchenShape}} </td>
+    <td>
+        <span>
+            <span ng-if="Math.floor(wallA/12) <= 5">
+                {{Math.floor(wallA/12) * 100}}
+            </span>
+            <span ng-if="Math.floor(wallA/12) > 5">
+                {{500+((Math.floor(wallA/12)-5)*200)}}
+            </span>
+        </span>
+    </td>
+    </tr>
+  n </table>
+    </div>
+    </div>
+    </div>
+ <button type="button" ng-click="back()" class="button">back</button>
+    <button  ng-click="toRegister()" class="button" >next</button>
+</div>
+</section>
+
+<!-- <button type="button" ng-click="toRegister()" class="button">next</button>
+<div>
+    <h1>Details</h1> 
+    <h2>products</h2>
+    <ul>
+        <li>
+            kitchen => 
+            <span>selected </span>
+            {{kitchenShape}} =>
+            <span ng-if="isKitchen">
+                <span ng-if="Math.floor(wallA/12) <= 5">{{Math.floor(wallA/12) * 100}}</span>
+                <span ng-if="Math.floor(wallA/12) > 5">{{500+((Math.floor(wallA/12)-5)*200)}}</span>
+            </span>
+            <span ng-if="isBed">
+                {{kitchenAamount}}
+            </span>=>
+            <span ng-if="kitchenCost1">{{kitchenCost1}} </span>=>
+            <span ng-if="kitchenCost2">{{kitchenCost2}} </span>
+        </li>
+        <li>
+            wordrobe =>
+            <span ng-if="products[1]">selected</span>
+            <span ng-if="!products[1]">not selected</span>
+            {{bedroomType}} =>
+            <span ng-if="isBed">
+                <span ng-if="Math.floor(wallA/12) <= 5">{{Math.floor(wallA/12) * 100}}</span>
+                <span ng-if="Math.floor(wallA/12) > 5">{{500+((Math.floor(wallA/12)-5)*200)}}</span>
+            </span>
+        </li>
+        <li>
+            full interiors  =>
+            <span ng-if="products[2]">selected</span>
+            <span ng-if="!products[2]">not selected</span>
+        </li>
+    </ul>
+    <button ng-click="back()">back</button>
+    
+</div>
+
+ -->

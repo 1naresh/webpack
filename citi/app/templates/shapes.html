@@ -1,0 +1,72 @@
+<section>
+<h3>What is the shape of your kitchen?</h3>
+<div class="container-product">
+<div class="row">
+    <div class="side">
+    <div class="fakeimg" style="background-color:#45d2b0;">
+        <div class="Shape" ng-mousemove="over('LShape')" ng-mouseleave="leave('LShape')">
+            <button type="button" ng-click="selectShape('LShape')" class="button">L-Shape</button>
+        </div>
+        <div class="Shape" ng-mousemove="over('UShape')" ng-mouseleave="leave('UShape')">        
+            <button type="button" ng-click="selectShape('UShape')" class="button">U-Shape</button>
+        </div>
+        <div class="Shape" ng-mousemove="over('parallelShape')" ng-mouseleave="leave('parallelShape')">
+            <button type="button" ng-click="selectShape('parallelShape')" class="button">parallel-Shape</button>
+        </div>
+        <div class="Shape" ng-mousemove="over('straightShape')" ng-mouseleave="leave('straightShape')">
+            <button type="button" ng-click="selectShape('straightShape')" class="button">straight-Shape</button>
+        </div>
+    </div> 
+    </div>
+    <div class="side">
+    <div class="fakeimg" style="background-color:#45d2b0;">
+        <img width="200px" id="pics" />
+        <!-- <div ng-if="isLShape">  
+            <p id="pics">nnnnn</p>
+        </div>
+        <div ng-if="isUShape"> 
+            <img width="200px" src="https://super.homelane.com/u-shaped-yellow-2.png"/>
+        </div>
+        <div ng-if="isstraightShape">
+            <img width="200px" src="https://super.homelane.com/s-shaped-yellow-2.png"/>
+        </div>
+        <div ng-if="isparallelShape">
+            <img width="200px" src="https://super.homelane.com/p-shaped-yellow-2.png"/>
+        </div>      -->
+    </div>
+    </div>
+    <div class="side">
+        <div class="fakeimg">
+        <h4 style="background-color: black; color: white; text-align: center;">Estimate</h4> 
+        <table>
+        <tr>
+    <th>Product</th>
+    <th>Selected</th>
+    <th>Shape</th>
+    </tr>
+    <tr>
+    <td>kitchen</td>
+    <td>selected</td>
+    <td><span ng-if="kitchenShape">{{kitchenShape}}</span></td>
+  </tr>
+  <tr ng-if="isWordrobe">
+    <td>wordrobe</td>
+    <td><span ng-if="products[1]">selected</span></td>
+    <td><span ng-if="!products[1]">notselected</span></td>
+  </tr>
+  <tr ng-if="isFullInteriors">
+    <td>fullinteriors</td>
+    <td><span ng-if="products[2]">selected</span></td>
+    <td><span ng-if="!products[2]">notselected</span></td>
+  </tr>
+        </table>
+    </div>
+</div>
+</div>
+<button type="button" ng-click="back()" class="button">back</button> 
+<button type="button" ng-click="continue()" class="button">next</button>  
+ 
+</div>
+ </section>
+
+ 

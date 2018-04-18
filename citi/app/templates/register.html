@@ -1,0 +1,49 @@
+<h3>Last Step: Register and Generate Estimate</h3>
+<div class="container"> 
+<form ng-submit="submitForm()" name="userForm" class="form-group" novalidate>
+<div class="row">
+<div class="col-25">
+    <label>First Name</label>
+    </div>
+    <div class="col-75">
+        <input type="text" class="form-control" ng-model="name">
+        <p ng-if="nameErr">name should be 6 to 15 letters</p>
+    </div>
+    </div>
+    <div class="row">
+<div class="col-25">
+    <label>Email</label>
+    </div>
+    <div class="col-75">
+        <input type="text" class="form-control" ng-model="email">
+        <p ng-if="emailErr">enter  valid email</p>
+        </div>
+        </div>
+        <div class="row">
+<div class="col-25">
+    <label >Mobile Number</label>
+    </div>
+    <div class="col-75">
+        <input type="text" class="form-control" ng-model="phone" >
+        <p ng-if="phoneErr">phone number should be 8 to 15 digits</p>
+    </div>
+    </div>
+    <div class="row">
+<div class="col-25">
+    <label>Select City</label>
+    </div>
+        <div class="col-75">
+        <select class="form-control" ng-model="city" >
+            <option ng-repeat="x in cities" value="{{x}}">{{x}}</option>
+        </select>
+        <p ng-if="cityErr">please select city</p>
+    </div>
+    </div>
+    <!--<p>{{userForm.$valid}}</p>-->
+    <div class="row">
+    <button type="button" ng-click="back()" class="button">back</button>
+    <button type="submit" class="button">submit</button>
+    </div>
+</form> 
+ 
+ </div>
