@@ -1,5 +1,18 @@
 
+import bed1Image from '../img/Wadrobe 1.png';
+import bed2Image from '../img/Wardrobe 2.png';
+import bed3Image from '../img/Wardrobe 3.png';
+
 function bedCtrl($scope,$window,dataService,$state,$localStorage){
+    if($state.current.name == 'singleBed'){
+        document.getElementById("image").src=bed1Image
+    }
+    if($state.current.name == 'doubleBed'){
+        document.getElementById("image").src=bed2Image
+    }
+    if($state.current.name == 'tripleBed'){
+        document.getElementById("image").src=bed3Image
+    }
     var user=$localStorage.user;
     $scope.products=user.products;
     $scope.kitchenShape=user.kitchenShape
@@ -10,7 +23,7 @@ function bedCtrl($scope,$window,dataService,$state,$localStorage){
     $scope.Math = $window.Math;
     $scope.heading='My wardrobe length(s) are'
     var amount=0
-    var size=0
+    var size=0 
     $scope.wallA=0
     $scope.wallB=0
     $scope.wallC=0

@@ -1,5 +1,10 @@
-
+import entertainmentImg from '../img/entertainment.jpg';
+import studyImg from '../img/study.jpg';
+import crockeryImg from '../img/crockery.jpg';
 function fulllInteriorsCtrl($scope,$state,dataService,$localStorage){
+    document.getElementById('entertainment').src=entertainmentImg;
+    document.getElementById('study').src=studyImg;
+    document.getElementById('crockery').src=crockeryImg;
     var user=$localStorage.user;
     $scope.products=user.products;
     $scope.kitchenShape=user.kitchenShape

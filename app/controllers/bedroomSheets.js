@@ -21,6 +21,7 @@ function bedroomSheetsCtrl($scope,$window,dataService,$state,$localStorage){
     $scope.bedRoomAmount=user.bedRoomAmount;
     user.bedroomCost1=0
     user.bedroomCost2=0
+    user.bedRoomHardware=0;
      $scope.costs1=[75,100,125,150,175,200,225,250]   
      $scope.costs2=[75,100,125,150,175,200,225,250]   
      $scope.onSelect1=function(cost){
@@ -34,11 +35,12 @@ function bedroomSheetsCtrl($scope,$window,dataService,$state,$localStorage){
         $scope.warning=false        
     }
     $scope.toRegister=function(){
-        if(user.bedroomCost1 && user.bedroomCost2){
+        user.bedRoomHardware=$scope.selectedHardware;
+        if(user.bedroomCost1 && user.bedroomCost2 && user.bedRoomHardware){
             if((user.products.indexOf('fullInteriors') == 2) || (user.products.indexOf('fulllInteriors') == 1)){
                 $state.go('fullInteriors')
             }else{
-                $state.go('hardware')
+                $state.go('final')
             }
         }
         else{
